@@ -203,14 +203,14 @@ const longest = function (array) {
 */
 
 const notSpam = function (emailContent) {
-  if (emailContent.search("SPAM") < 0 && emailContent.search("SCAM") < 0) {
+  if (emailContent.search(/SPAM/i) < 0 && emailContent.search(/SCAM/i) < 0) {
     return true;
   } else {
     return false;
   }
 };
 
-// console.log(notSpam("Lorem ipsum is placeholder SPAM commonly used in the graphic, print."));
+// console.log(notSpam("Lorem ipsum is placeholder SPam commonly used in the graphic, print."));
 
 /* EXTRA 10
  Scrivi una funzione che riceve una data come parametro, e calcola il numero di giorni passati da quella data.
