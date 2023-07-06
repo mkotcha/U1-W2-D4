@@ -146,4 +146,4 @@ const giveMeRandom = function (n) {
   return nArray;
 };
 
-console.log(giveMeRandom(33));
+//console.log(giveMeRandom(33));

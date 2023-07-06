@@ -6,48 +6,125 @@
  La funzione deve inoltre ritornare la somma di tutti i valori maggiori di 5.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+const giveMeRandom = function (n) {
+  let nArray = [];
+  for (let i = 0; i < n; i++) {
+    nArray.push(Math.floor(Math.random() * 11));
+  }
+  return nArray;
+};
+
+const checkArray = function (array) {
+  let count = 0;
+  for (i = 0; i < array.length; i++) {
+    if (array[i] > 5) {
+      console.log(array[i], "> 5");
+      count++;
+    } else {
+      console.log(array[i], "<= 5");
+    }
+  }
+  return count;
+};
+
+console.log(checkArray(giveMeRandom(7)));
 
 /* EXTRA 2
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
  Crea una funzione chiamata "shoppingCartTotal" che calcola il totale dovuto al negozio (tenendo conto delle quantità di ogni oggetto).
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+const shoppigCartTotal = function () {
+  let tot = 0;
+  for (let i = 0; i < shoppingCart.length; i++) {
+    tot += shoppingCart[i].price * shoppingCart[i].quantity;
+  }
+  return tot;
+};
 
 /* EXTRA 3
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
  Crea una funzione chiamata "addToShoppingCart" che riceve un nuovo oggetto dello stesso tipo, lo aggiunge a "shoppingCart" e ritorna il nuovo numero totale degli elementi.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+const addToShoppingCart = function (cartItem) {
+  let count = 0;
+  shoppingCart.push(cartItem);
+  for (let i = 0; i < shoppingCart.length; i++) {
+    count += shoppingCart[i].quantity;
+  }
+  return count;
+};
 
 /* EXTRA 4
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
  Crea una funzione chiamata "maxShoppingCart" che riceve l'array "shoppingCart" e ritorna l'oggetto più costoso in esso contenuto.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+const macShoppingCart = function () {
+  const item = {
+    price: 0,
+    name: "",
+    id: 0,
+    quantity: 0,
+  };
+
+  for (let i = 0; i < shoppingCart.length; i++) {
+    if (shoppingCart[i].price > item.price) {
+      item = shoppingCart[i];
+    }
+  }
+  return item;
+};
 
 /* EXTRA 5
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
  Crea una funzione chiamata "latestShoppingCart" che riceve l'array "shoppingCart" e ritorna l'ultimo elemento.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+const latestShoppingCart = function () {
+  let latest = latestShoppingCart.length - 1;
+  return latestShoppingCart[latest];
+};
 
 /* EXTRA 6
  Crea una funzione chiamata "loopUntil" che riceve un numero intero come parametro con valore tra 0 e 9.
  La funzione è composta da un ciclo che stampa un numero casuale tra 0 e 9 finchè il numero casuale non è maggiore di x per tre volte di fila.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+const loopUntil = function (num) {
+  let counter = 0;
+  let lastFlag = true;
+  while (counter < 3) {
+    let rand = Math.floor(Math.random() * 10);
+    if (rand > num) {
+      if (lastFlag === true) {
+        counter++;
+      } else {
+        counter = 1;
+        lastFlag = true;
+      }
+    } else {
+      counter = 0;
+      lastFlag = false;
+    }
+  }
+};
 
 /* EXTRA 7
 Crea una funzione chiamata "average" che riceve un array come parametro e ne ritorna la media aritmetica. La funzione salta automaticamente i valori non numerici nell'array.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+const average = function (array) {
+  let counter = 0;
+  let subTot = 0;
+  for (i = 0; i < array.length; i++)
+    if (!isNan(array[i])) {
+      subTot = +array[i];
+      counter++;
+    }
+  return subTot / counter;
+};
 
 /* EXTRA 8
  Crea una funzione chiamata "longest" che trova la stringa più lunga all'interno di un array di stringhe fornito come parametro.
