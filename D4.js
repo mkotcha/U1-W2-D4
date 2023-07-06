@@ -60,7 +60,7 @@ const boundary = function (n) {
   }
 };
 
-// console.log(boundary(400));
+// console.log(boundary(100));
 
 /* ESERCIZIO 5
  Scrivi una funzione di nome "epify" che accetta una stringa come parametro.
@@ -77,7 +77,7 @@ const epify = function (str) {
   }
 };
 
-//console.log(epify("EPICODEuno due tre"));
+// console.log(epify("EPICODuno due tre"));
 
 /* ESERCIZIO 6
  Scrivi una funzione di nome "check3and7" che accetta un numero positivo come parametro. La funzione deve controllare che il parametro sia un multiplo
@@ -121,7 +121,7 @@ const upperFirst = function (str) {
   return nStr.join(" ");
 };
 
-//console.log(upperFirst("uno due tre 4quattro"));
+console.log(upperFirst("uno due tre 4quattro"));
 
 /* ESERCIZIO 9
  Scrivi una funzione di nome "cutString", che riceve come parametro una stringa. La funzione deve creare una nuova stringa senza il primo e l'ultimo carattere
