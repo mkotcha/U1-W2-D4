@@ -130,20 +130,41 @@ const average = function (array) {
  Crea una funzione chiamata "longest" che trova la stringa più lunga all'interno di un array di stringhe fornito come parametro.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+const longest = function (array) {
+  let longestIndex = -1;
+  let longestValue = 0;
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].length > longestValue) {
+      longestIndex = i;
+      longestValue = array[i].length;
+    }
+  }
+  return array[longestIndex];
+};
 
 /* EXTRA 9
  Crea una funzione per creare un filtro anti-spam per la tua casella email. La funzione riceve un parametro stringa chiamato "emailContent", e torna un valore booleano.
  La funzione deve ritornare true se "emailContent" non contiene le parole "SPAM" o "SCAM".
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+const notSpam = function (emailContent) {
+  if (emailContent.search("SPAM") < 0 && emailContent.search("SCAM") < 0) {
+    return true;
+  } else {
+    return false;
+  }
+};
 
 /* EXTRA 10
  Scrivi una funzione che riceve una data come parametro, e calcola il numero di giorni passati da quella data.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+const dayPass = function (dateParam) {
+  const dateNow = Date.now();
+  let timePass = dateNow.getTime() - dateParam.getTime();
+  timePass /= 1000 * 3600 * 24;
+  return timePass;
+};
 
 /* EXTRA 11
  Scrivi una funzione chiamata "matrixGenerator" che riceve come parametri due numeri interi, "x" e "y".
@@ -153,4 +174,15 @@ const average = function (array) {
  "10","11","12"]
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+const matrixGenerator = function (x, y) {
+  const myMatrix = [[], []];
+  for (let i = 0; i < x; i++) {
+    for (let j = 0; j < y; j++) {
+      //   matrix[i][j] = x.toString() + y.toString();
+      myMatrix[i][j] = "";
+    }
+  }
+  return myMatrix;
+};
+
+console.log(matrixGenerator(3, 4));
